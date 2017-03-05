@@ -4,20 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
+import { ApiplaygroundComponent } from './apiplayground/apiplayground.component';
+import { HomeComponent } from './home/home.component';
+import { firebaseConfig } from "../environments/firebase.config";
+import { LessonsService } from './shared/model/lessons.service';
 
-// Must export the config
-export const firebaseConfig = {
-    apiKey: "AIzaSyAuUM-73VyykFzJb_cyb6xJbj5J-lmzBoc",
-    authDomain: "ambient-34c45.firebaseapp.com",
-    databaseURL: "https://ambient-34c45.firebaseio.com",
-    storageBucket: "ambient-34c45.appspot.com",
-    messagingSenderId: "221338218466"
-};
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ApiplaygroundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +24,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LessonsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

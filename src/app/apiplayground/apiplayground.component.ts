@@ -3,11 +3,11 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import 'rxjs/add/operator/map';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-apiplayground',
+  templateUrl: './apiplayground.component.html',
+  styleUrls: ['./apiplayground.component.css']
 })
-export class AppComponent {
+export class ApiplaygroundComponent {
 
   courses$:FirebaseListObservable<any>;
   lesson$:FirebaseObjectObservable<any>;
